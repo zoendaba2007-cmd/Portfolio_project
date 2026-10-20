@@ -18,7 +18,7 @@ Junior developer / front-end developer, ideally at a product team or agency wher
 |---|---|---|
 | **Home** | `/` | Introduction, a one-line pitch with my target role, key achievements and featured projects |
 | **Projects** | `/projects` | Cards for my projects, each with a description, tech used and links to the code |
-| **Contact** | `/contact` | Email and GitHub ,plus a simple contact form |
+| **Contact** | `/contact` | Email and GitHub, plus a simple contact form 
 
 ## Design
 
