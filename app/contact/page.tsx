@@ -6,7 +6,6 @@ import { site } from "@/lib/site";
 export default function Contact() {
   return (
     <Container className="py-16">
-      <Eyebrow>Contact /contact</Eyebrow>
       <h1 className="mt-3 font-display text-5xl font-semibold text-ink">
         Let’s talk.
       </h1>

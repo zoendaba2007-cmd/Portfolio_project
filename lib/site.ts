@@ -2,7 +2,7 @@ export const site = {
   name: "Zoë Ndaba",
   role: "Junior developer",
   tagline: "Junior developer in the making.",
-  email: "you@example.com",
-  github: "https://github.com/your-handle",
-  githubLabel: "github.com/your-handle",
+  email: "zoendaba2007@gmail.com",
+  github: "https://github.com/zoendaba2007-cmd",
+  githubLabel: "github.com/zoendaba2007-cmd",
 };

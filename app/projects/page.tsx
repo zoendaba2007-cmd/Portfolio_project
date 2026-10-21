@@ -8,7 +8,6 @@ export default function Projects() {
   return (
     <>
       <Container className="py-16">
-        <Eyebrow>Projects /projects</Eyebrow>
         <h1 className="mt-3 font-display text-5xl font-semibold text-ink">
           Projects
         </h1>
