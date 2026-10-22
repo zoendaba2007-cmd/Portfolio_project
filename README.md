@@ -1,6 +1,6 @@
 # Zoë | Portfolio Site
 
-**Live site:** https://your-project.vercel.app
+**Live site:** https://portfolio-project-self-eight.vercel.app/
 
 A bright, modern portfolio, bringing together my projects and achievements so far.
 
@@ -37,8 +37,8 @@ Junior developer / front-end developer, ideally at a product team or agency wher
 ## Running locally
 
 ```bash
-git clone https://github.com/your-username/portfolio-site.git
-cd portfolio-site
+git clone https://github.com/zoendaba2007-cmd/Portfolio_project
+cd portfolio-projecte
 npm install
 npm run dev
 ```
