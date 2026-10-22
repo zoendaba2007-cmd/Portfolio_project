@@ -48,3 +48,7 @@ Then open http://localhost:3000.
 ## Status
 
 Skeleton stage: navigation and placeholder pages are in place. Content and styling are being built up over the coming milestones.
+
+## Reflection
+
+I am aiming for a junior developer role, where I can keep learning while working on real user-facing projects. One design decision I made was to use a deep amethyst shade for buttons, links and text, instade of a amethyst shade because it's lighter, so the site meets Lighthouse’s 4.5:1 contrast requirement.
