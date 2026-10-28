@@ -4,10 +4,11 @@ import CTABand from "@/components/CTABand";
 import Eyebrow from "@/components/Eyebrow";
 import ProjectCard from "@/components/ProjectCard";
 import Link from "next/link";
-import { projects } from "@/lib/projects";
+import { getProjects } from "@/lib/projects";
 import { site } from "@/lib/site";
 
-export default function Home() {
+export default async function Home() {
+  const projects = await getProjects();
   return (
     <>
       <Container className="grid items-center gap-10 py-16 md:grid-cols-2">
@@ -75,7 +76,7 @@ export default function Home() {
         </div>
         <div className="mt-6 grid gap-6 md:grid-cols-2">
           {projects.slice(0, 2).map((p) => (
-            <ProjectCard key={p.title} project={p} />
+            <ProjectCard key={p.id} project={p} />
           ))}
         </div>
       </Container>

@@ -19,6 +19,8 @@ Junior developer / front-end developer, ideally at a product team or agency wher
 | **Home** | `/` | Introduction, a one-line pitch with my target role, key achievements and featured projects |
 | **Projects** | `/projects` | Cards for my projects, each with a description, tech used and links to the code |
 | **Contact** | `/contact` | Email and GitHub, plus a simple contact form 
+| **Sign in** | `/login` | Sign in with the admin Supabase account |
+| **Admin** | `/admin` | Manage projects; available only after signing in |
 
 ## Design
 

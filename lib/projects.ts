@@ -1,20 +1,26 @@
-import { site } from "./site";
+import { createClient } from "@/lib/supabase/server";
 
 export type Project = {
+  id: string;
   title: string;
-  status: string;
-  description: string;
-  tags: string[];
-  repoUrl: string;
-  repoLabel: string;
+  summary: string;
+  live_url: string | null;
+  repo_url: string | null;
+  image_url: string | null;
+  sort_order: number;
 };
 
-export const projects: Project[] = ["A", "B", "C", "D"].map((letter) => ({
-  title: `Project ${letter}`,
-  status: "Placeholder",
-  description:
-    "Describe the problem, what you built, and the outcome in two short sentences.",
-  tags: ["Tech 1", "Tech 2", "Tech 3"],
-  repoUrl: site.github,
-  repoLabel: `${site.githubLabel}/project-${letter.toLowerCase()}`,
-}));
+export async function getProjects(): Promise<Project[]> {
+  const supabase = await createClient();
+  const { data, error } = await supabase
+    .from("projects")
+    .select("id,title,summary,live_url,repo_url,image_url,sort_order")
+    .order("sort_order", { ascending: true })
+    .order("created_at", { ascending: false });
+
+  if (error) {
+    console.error("Could not load projects:", error.message);
+    return [];
+  }
+  return data ?? [];
+}

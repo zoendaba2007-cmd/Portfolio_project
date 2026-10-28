@@ -2,9 +2,11 @@ import Container from "@/components/Container";
 import CTABand from "@/components/CTABand";
 import Eyebrow from "@/components/Eyebrow";
 import ProjectCard from "@/components/ProjectCard";
-import { projects } from "@/lib/projects";
+import { getProjects } from "@/lib/projects";
 
-export default function Projects() {
+export default async function Projects() {
+  const projects = await getProjects();
+
   return (
     <>
       <Container className="py-16">
@@ -18,14 +20,18 @@ export default function Projects() {
 
         <div className="mt-10 flex items-center justify-between border-t border-line pt-4">
           <Eyebrow>Project index</Eyebrow>
-          <Eyebrow>{String(projects.length).padStart(2, "0")} project placeholders</Eyebrow>
+          <Eyebrow>{String(projects.length).padStart(2, "0")} projects</Eyebrow>
         </div>
 
+        {projects.length === 0 ? (
+        <p className="mt-6 text-muted">Projects are coming soon.</p>
+        ) : (
         <div className="mt-6 grid gap-6 md:grid-cols-2">
-          {projects.map((p) => (
-            <ProjectCard key={p.title} project={p} />
-          ))}
+            {projects.map((p) => (
+            <ProjectCard key={p.id} project={p} />
+            ))}
         </div>
+        )}
 
         <p className="mt-8 rounded-md border border-line bg-tint p-4 text-sm text-muted">
           <span className="font-mono text-xs uppercase tracking-widest">

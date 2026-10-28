@@ -2,6 +2,8 @@
 
 import Link from "next/link";
 import { usePathname } from "next/navigation";
+import { useEffect, useState } from "react";
+import { createClient } from "@/lib/supabase/client";
 import { site } from "@/lib/site";
 import Container from "./Container";
 
@@ -13,6 +15,25 @@ const links = [
 
 export default function Navbar() {
   const pathname = usePathname();
+  const [isAuthenticated, setIsAuthenticated] = useState(false);
+
+  useEffect(() => {
+    const supabase = createClient();
+    const {
+      data: { subscription },
+    } = supabase.auth.onAuthStateChange((_event, session) => {
+      setIsAuthenticated(Boolean(session?.user));
+    });
+
+    return () => subscription.unsubscribe();
+  }, []);
+
+  const visibleLinks = [
+    ...links,
+    isAuthenticated
+      ? { href: "/admin", label: "Admin" }
+      : { href: "/login", label: "Sign in" },
+  ];
 
   return (
     <header className="sticky top-0 z-10 border-b border-line bg-white/90 backdrop-blur">
@@ -32,7 +53,7 @@ export default function Navbar() {
             </span>
           </Link>
           <ul className="flex gap-1">
-            {links.map(({ href, label }) => {
+            {visibleLinks.map(({ href, label }) => {
               const active = pathname === href;
               return (
                 <li key={href}>
