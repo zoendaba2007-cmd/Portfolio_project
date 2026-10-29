@@ -1,3 +1,4 @@
+import { Suspense } from "react";
 import ButtonLink from "@/components/ButtonLink";
 import Container from "@/components/Container";
 import CTABand from "@/components/CTABand";
@@ -7,8 +8,19 @@ import Link from "next/link";
 import { getProjects } from "@/lib/projects";
 import { site } from "@/lib/site";
 
-export default async function Home() {
+async function FeaturedProjects() {
   const projects = await getProjects();
+
+  return (
+    <div className="mt-6 grid gap-6 md:grid-cols-2">
+      {projects.slice(0, 2).map((p) => (
+        <ProjectCard key={p.id} project={p} />
+      ))}
+    </div>
+  );
+}
+
+export default function Home() {
   return (
     <>
       <Container className="grid items-center gap-10 py-16 md:grid-cols-2">
@@ -74,11 +86,11 @@ export default async function Home() {
             All projects →
           </Link>
         </div>
-        <div className="mt-6 grid gap-6 md:grid-cols-2">
-          {projects.slice(0, 2).map((p) => (
-            <ProjectCard key={p.id} project={p} />
-          ))}
-        </div>
+        <Suspense
+          fallback={<p className="mt-6 text-sm text-muted">Loading projects…</p>}
+        >
+          <FeaturedProjects />
+        </Suspense>
       </Container>
 
       <CTABand
