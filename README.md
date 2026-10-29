@@ -69,4 +69,4 @@ The portfolio is deployed and has working Home, Projects and Contact pages. Proj
 
 ## Reflection
 
-Building this portfolio has helped me connect a polished front end to a real data source. I added Supabase-backed project management and restricted the admin area so visitors can browse projects while only the admin account can manage them. I also learned to handle request-time data with Suspense so the project listings work with Next.js prerendering. I chose a deep amethyst for text, links and buttons to keep the interface readable, using lighter shades as decoration. My next step is to replace the remaining placeholder copy and achievements with my own final content.
+I added Supabase-backed project management and restricted the admin area so visitors can browse projects while only the admin account can manage them. I also learned to handle request-time data with Suspense so the project listings work with Next.js prerendering. I chose a deep amethyst for text, links and buttons to keep the interface readable, using lighter shades as decoration. My next step is to replace the remaining placeholder copy and achievements with my own final content.
