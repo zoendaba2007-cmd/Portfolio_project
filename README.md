@@ -19,8 +19,8 @@ Junior developer / front-end developer, ideally at a product team or agency wher
 | **Home** | `/` | Introduction, a one-line pitch with my target role, key achievements and featured projects |
 | **Projects** | `/projects` | Cards for my projects, each with a description, tech used and links to the code |
 | **Contact** | `/contact` | Email and GitHub, plus a simple contact form 
-| **Sign in** | `/login` | Sign in with the admin Supabase account |
-| **Admin** | `/admin` | Manage projects; available only after signing in |
+| **Sign in** | `/login` | Sign in with the admin Supabase account; there is no public sign-up page |
+| **Admin** | `/admin` | Manage projects; available only to the account matching the configured site email |
 
 ## Design
 
@@ -47,10 +47,26 @@ npm run dev
 
 Then open http://localhost:3000.
 
+## Environment variables
+
+Set these in `.env.local` locally and in Vercel project settings. Never commit values.
+
+| Name | Purpose |
+|---|---|
+| `NEXT_PUBLIC_SUPABASE_URL` | Supabase project URL |
+| `NEXT_PUBLIC_SUPABASE_PUBLISHABLE_KEY` | Supabase publishable (public) key |
+
+## Supabase setup
+
+1. Create a project and one user for yourself, and disable sign-ups.
+2. Run `supabase/schema.sql` in the SQL Editor, replacing the placeholder UID with your user's UID.
+3. Add the environment variables above.
+4. Sign in at `/login`, then manage projects at `/admin`.
+
 ## Status
 
-Skeleton stage: navigation and placeholder pages are in place. Content and styling are being built up over the coming milestones.
+The portfolio is deployed and has working Home, Projects and Contact pages. Project content is stored in Supabase and can be managed through an admin area protected by sign-in and an admin-email check. The site uses a responsive amethyst design and is built with Next.js, TypeScript and Tailwind CSS. Some portfolio copy and achievement details are still placeholders and should be replaced with final content.
 
 ## Reflection
 
-I am aiming for a junior developer role, where I can keep learning while working on real user-facing projects. One design decision I made was to use a deep amethyst shade for buttons, links and text, instade of a amethyst shade because it's lighter, so the site meets Lighthouse’s 4.5:1 contrast requirement.
+Building this portfolio has helped me connect a polished front end to a real data source. I added Supabase-backed project management and restricted the admin area so visitors can browse projects while only the admin account can manage them. I also learned to handle request-time data with Suspense so the project listings work with Next.js prerendering. I chose a deep amethyst for text, links and buttons to keep the interface readable, using lighter shades as decoration. My next step is to replace the remaining placeholder copy and achievements with my own final content.

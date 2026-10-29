@@ -5,6 +5,7 @@ import Container from "@/components/Container";
 import Eyebrow from "@/components/Eyebrow";
 import ProjectForm from "@/components/ProjectForm";
 import { getProjects } from "@/lib/projects";
+import { isAdminEmail } from "@/lib/admin";
 import { createClient } from "@/lib/supabase/server";
 import { logout } from "../login/actions";
 import { createProject, deleteProject } from "./actions";
@@ -19,7 +20,7 @@ export default async function Admin() {
   const {
     data: { user },
   } = await supabase.auth.getUser();
-  if (!user) redirect("/login");
+  if (!user || !isAdminEmail(user.email)) redirect("/login");
 
   const projects = await getProjects();
 

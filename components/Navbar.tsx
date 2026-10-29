@@ -3,6 +3,7 @@
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useEffect, useState } from "react";
+import { isAdminEmail } from "@/lib/admin";
 import { createClient } from "@/lib/supabase/client";
 import { site } from "@/lib/site";
 import Container from "./Container";
@@ -18,22 +19,23 @@ export default function Navbar() {
   const [isAuthenticated, setIsAuthenticated] = useState(false);
 
   useEffect(() => {
+    let active = true;
     const supabase = createClient();
     const {
       data: { subscription },
     } = supabase.auth.onAuthStateChange((_event, session) => {
-      setIsAuthenticated(Boolean(session?.user));
+      if (active) setIsAuthenticated(isAdminEmail(session?.user.email));
     });
 
-    return () => subscription.unsubscribe();
-  }, []);
+    return () => {
+      active = false;
+      subscription.unsubscribe();
+    };
+  }, [pathname]);
 
-  const visibleLinks = [
-    ...links,
-    isAuthenticated
-      ? { href: "/admin", label: "Admin" }
-      : { href: "/login", label: "Sign in" },
-  ];
+  const visibleLinks = isAuthenticated
+    ? [...links, { href: "/admin", label: "Admin" }]
+    : links;
 
   return (
     <header className="sticky top-0 z-10 border-b border-line bg-white/90 backdrop-blur">

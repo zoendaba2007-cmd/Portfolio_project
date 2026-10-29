@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { notFound, redirect } from "next/navigation";
 import Container from "@/components/Container";
 import ProjectForm from "@/components/ProjectForm";
+import { isAdminEmail } from "@/lib/admin";
 import type { Project } from "@/lib/projects";
 import { createClient } from "@/lib/supabase/server";
 import { updateProject } from "../actions";
@@ -21,7 +22,7 @@ export default async function EditProject({
   const {
     data: { user },
   } = await supabase.auth.getUser();
-  if (!user) redirect("/login");
+  if (!isAdminEmail(user?.email)) redirect("/login");
 
   const { data } = await supabase
     .from("projects")
