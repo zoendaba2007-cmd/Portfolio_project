@@ -3,7 +3,7 @@ import { notFound, redirect } from "next/navigation";
 import Container from "@/components/Container";
 import ProjectForm from "@/components/ProjectForm";
 import { isAdminEmail } from "@/lib/admin";
-import type { Project } from "@/lib/projects";
+import type { PROJECT_COLUMNS, type Project } from "@/lib/projects";
 import { createClient } from "@/lib/supabase/server";
 import { updateProject } from "../actions";
 
@@ -26,7 +26,7 @@ export default async function EditProject({
 
   const { data } = await supabase
     .from("projects")
-    .select("id,title,summary,live_url,repo_url,image_url,sort_order")
+    .select(PROJECT_COLUMNS)
     .eq("id", id)
     .single();
   if (!data) notFound();
