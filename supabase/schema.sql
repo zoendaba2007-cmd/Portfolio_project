@@ -33,3 +33,13 @@ create policy "Owner can delete projects"
   on public.projects for delete
   to authenticated
   using ((select auth.uid()) = 'YOUR-USER-UID'::uuid);
+
+alter table public.projects
+  add column slug text unique,
+  add column problem text,
+  add column role text,
+  add column stack text[] not null default '{}',
+  add column next_steps text,
+  add column video_url text,
+  add column screenshots text[] not null default '{}',
+  add column is_capstone boolean not null default false;
