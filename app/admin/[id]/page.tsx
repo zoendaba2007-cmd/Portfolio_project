@@ -3,7 +3,7 @@ import { notFound, redirect } from "next/navigation";
 import Container from "@/components/Container";
 import ProjectForm from "@/components/ProjectForm";
 import { isAdminEmail } from "@/lib/admin";
-import type { PROJECT_COLUMNS, type Project } from "@/lib/projects";
+import { PROJECT_COLUMNS, type Project } from "@/lib/projects";
 import { createClient } from "@/lib/supabase/server";
 import { updateProject } from "../actions";
 

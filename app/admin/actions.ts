@@ -18,7 +18,6 @@ function url(fd: FormData, key: string) {
   return value;
 }
 
-function fields(fd: FormData) {
 function lines(fd: FormData, key: string) {
   return text(fd, key)
     .split("\n")
@@ -71,7 +70,6 @@ function fields(fd: FormData) {
     is_capstone: fd.get("is_capstone") === "on",
     sort_order: Number.parseInt(text(fd, "sort_order"), 10) || 0,
   };
-}
 }
 
 async function requireUser() {

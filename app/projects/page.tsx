@@ -35,10 +35,6 @@ export default function Projects() {
         <h1 className="mt-3 font-display text-5xl font-semibold text-ink">
           Projects
         </h1>
-        <p className="mt-4 max-w-xl text-muted">
-          [Introduce the work you want to be known for, your areas of focus,
-          and the approach you bring to each project.]
-        </p>
 
         <Suspense
           fallback={<p className="mt-10 text-sm text-muted">Loading projects…</p>}
@@ -46,17 +42,11 @@ export default function Projects() {
           <ProjectIndex />
         </Suspense>
 
-        <p className="mt-8 rounded-md border border-line bg-tint p-4 text-sm text-muted">
-          <span className="font-mono text-xs uppercase tracking-widest">
-            Code links:{" "}
-          </span>
-          Replace each repository URL with the project’s source code link. Use
-          the cards to describe your own contribution and the technology used.
-        </p>
+
       </Container>
       <CTABand
         heading="Have something in mind?"
-        text="[Invite visitors to discuss a role, project, or collaboration.]"
+        text="Let's connect and discuss new ideas, potential collaborations, or any questions you may have."
         label="Contact me"
         href="/contact"
       />
