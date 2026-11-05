@@ -30,9 +30,8 @@ export default function Home() {
           </h1>
           <p className="mt-4 text-lg font-semibold text-ink">{site.tagline}</p>
           <p className="mt-3 max-w-md text-muted">
-            [Introduce your focus, the kinds of problems you enjoy solving, and
-            what you bring to a team. Keep this to two or three short
-            sentences.]
+            I am on the path to become a full-stack developer. I dive into looking for solutions to problems that may arise the in everyone's daily life.
+            I am someone who always checkes in on the team and makes sure that everyone is on the same page, so we can all reach our goals.
           </p>
           <div className="mt-8 flex flex-wrap gap-3">
             <ButtonLink href="/projects">View projects</ButtonLink>
@@ -95,7 +94,7 @@ export default function Home() {
 
       <CTABand
         heading="Let’s start a conversation."
-        text="[Add a short invitation for relevant roles or collaborations.]"
+        text="Any and all ideas and questions are welcome. I am open to discuss new projects, collaborations, or any inquiries you may have."
         label="Get in touch"
         href="/contact"
       />

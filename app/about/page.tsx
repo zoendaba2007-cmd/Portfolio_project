@@ -10,11 +10,14 @@ export const metadata: Metadata = {
 };
 
 const about = {
-  intro: "WRITE: who you are in one or two sentences.",
-  role: "WRITE: the exact role you want, and what kind of team or product.",
-  background: "WRITE: how you got here: what you studied, built or achieved so far.",
-  now: "WRITE: what you're working on or learning at the moment.",
+  intro: "I am a crictical thinker and problem solver, who loves to research and learn about globel issues. ",
+  role: "I would like to become a junior developer and work on projects that have a positive impact on society.",
+  background:
+    "I always wanted to be in the medical field but as I grew older, I realized that I wanted to apply my critical thinking skills to build something tangible. This year I pivoted and joined a 1 year programming course to exlore what life could look like in the tech industry and I have been pleasently surprised by.",
+  now: "I am currently doing CSS50 Cybersecurity course. ",
 };
+
+const learned = ["HTML and CSS", "JavaScript", "Python", "Databases", "React", "Next.js"];
 
 export default function About() {
   return (
@@ -30,6 +33,17 @@ export default function About() {
       <section className="mt-10">
         <h2 className="font-display text-2xl font-semibold text-ink">My background</h2>
         <p className="mt-3 text-muted">{about.background}</p>
+        <p className="mt-3 text-muted">I have learned:</p>
+        <ul className="mt-2 list-disc space-y-1 pl-6 text-muted">
+          {learned.map((item) => (
+            <li key={item}>{item}</li>
+          ))}
+        </ul>
+        <p className="mt-3 text-muted">I have been part of 2 group projects:</p>
+        <ul className="mt-2 list-disc space-y-1 pl-6 text-muted">
+          <li>A weather app</li>
+          <li>A canteen website</li>
+        </ul>
       </section>
       <section className="mt-10">
         <h2 className="font-display text-2xl font-semibold text-ink">Right now</h2>
