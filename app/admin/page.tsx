@@ -9,6 +9,7 @@ import { isAdminEmail } from "@/lib/admin";
 import { createClient } from "@/lib/supabase/server";
 import { logout } from "../login/actions";
 import { createProject, deleteProject } from "./actions";
+import MessageList from "@/components/MessageList";
 
 export const metadata: Metadata = {
   title: "Admin",
@@ -23,6 +24,12 @@ export default async function Admin() {
   if (!user || !isAdminEmail(user.email)) redirect("/login");
 
   const projects = await getProjects();
+
+  const { data: messages, error: messagesError } = await supabase
+  .from("contact_messages")
+  .select("id,name,email,subject,message,created_at")
+  .order("created_at", { ascending: false })
+  .limit(50);
 
   return (
     <Container className="py-16">
@@ -69,6 +76,23 @@ export default async function Admin() {
       <div className="mt-4">
         <ProjectForm action={createProject} submitLabel="Add project" />
       </div>
+
+      <h2
+        id="messages"
+        className="mt-16 font-display text-2xl font-semibold text-ink"
+      >
+        Messages ({messages?.length ?? 0})
+      </h2>
+      <div className="mt-4">
+        {messagesError ? (
+          <p role="alert" className="text-sm font-semibold text-primary">
+            Could not load messages: {messagesError.message}
+          </p>
+        ) : (
+          <MessageList messages={messages ?? []} />
+        )}
+      </div>
     </Container>
   );
 }
+

@@ -120,3 +120,15 @@ export async function deleteProject(fd: FormData) {
   refresh();
   redirect("/admin");
 }
+
+export async function deleteMessage(fd: FormData) {
+  const supabase = await requireUser();
+  const { data, error } = await supabase
+    .from("contact_messages")
+    .delete()
+    .eq("id", text(fd, "id"))
+    .select("id");
+  if (error) throw new Error(error.message);
+  if (!data?.length) throw new Error("Nothing was deleted.");
+  revalidatePath("/admin");
+}
