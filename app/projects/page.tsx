@@ -32,7 +32,7 @@ export default function Projects() {
   return (
     <>
       <Container className="py-16">
-        <h1 className="mt-3 font-display text-5xl font-semibold text-ink">
+        <h1 className="mt-3 font-display text-4xl sm:text-5xl font-semibold text-ink">
           Projects
         </h1>
 

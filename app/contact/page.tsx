@@ -6,7 +6,7 @@ import { site } from "@/lib/site";
 export default function Contact() {
   return (
     <Container className="py-16">
-      <h1 className="mt-3 font-display text-5xl font-semibold text-ink">
+      <h1 className="mt-3 font-display text-4xl sm:text-5xl font-semibold text-ink">
         Let’s talk.
       </h1>
       <p className="mt-4 max-w-xl text-muted">

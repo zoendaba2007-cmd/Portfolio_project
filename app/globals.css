@@ -34,3 +34,7 @@ body {
     animation: none !important;
   }
 }
+
+h1, h2, h3, p, li, a, dd {
+  overflow-wrap: break-word;
+}

@@ -16,7 +16,7 @@ export default function Skills() {
   return (
     <Container className="py-16">
       <Eyebrow>Skills /skills</Eyebrow>
-      <h1 className="mt-3 font-display text-5xl font-semibold text-ink">Skills</h1>
+      <h1 className="mt-3 font-display text-4xl sm:text-5xl font-semibold text-ink">Skills</h1>
       <p className="mt-4 max-w-xl text-muted">
         Every skill here links to something you can open and check.
       </p>

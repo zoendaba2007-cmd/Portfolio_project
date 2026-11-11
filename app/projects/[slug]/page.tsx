@@ -49,7 +49,7 @@ export default async function CaseStudy({ params }: Props) {
       </Link>
       <div className="mt-6">
         <Eyebrow>{project.is_capstone ? "Capstone case study" : "Case study"}</Eyebrow>
-        <h1 className="mt-3 font-display text-5xl font-semibold text-ink">
+        <h1 className="mt-3 font-display text-4xl sm:text-5xl font-semibold text-ink">
           {project.title}
         </h1>
         <p className="mt-4 text-lg text-muted">{project.summary}</p>

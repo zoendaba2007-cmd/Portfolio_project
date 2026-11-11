@@ -24,7 +24,7 @@ export default function About() {
   return (
     <Container className="max-w-3xl py-16">
       <Eyebrow>About /about</Eyebrow>
-      <h1 className="mt-3 font-display text-5xl font-semibold text-ink">About me</h1>
+      <h1 className="mt-3 font-display text-4xl sm:text-5xl font-semibold text-ink">About me</h1>
       <p className="mt-6 text-xl text-ink">{about.intro}</p>
 
       <section className="mt-10">

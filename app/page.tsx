@@ -26,7 +26,7 @@ export default function Home() {
     <>
       <Container className="grid items-center gap-10 py-16 md:grid-cols-2">
         <div>
-          <h1 className="font-display text-5xl font-semibold leading-tight text-ink">
+          <h1 className="font-display text-4xl sm:text-5xl font-semibold leading-tight text-ink">
             Hello, I’m {site.name}.
           </h1>
           <p className="mt-4 text-lg font-semibold text-ink">{site.tagline}</p>
