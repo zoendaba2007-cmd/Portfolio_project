@@ -7,6 +7,7 @@ import ProjectCard from "@/components/ProjectCard";
 import Link from "next/link";
 import { getProjects } from "@/lib/projects";
 import { site } from "@/lib/site";
+import CvLink from "@/components/CvLink";
 
 async function FeaturedProjects() {
   const projects = await getProjects();
@@ -39,6 +40,11 @@ export default function Home() {
               Contact me
             </ButtonLink>
           </div>
+        </div>
+        <div className="mt-8 flex flex-wrap gap-3">
+          <ButtonLink href="/projects">View projects</ButtonLink>
+          <ButtonLink href="/contact" variant="outline">Contact me</ButtonLink>
+          <CvLink />
         </div>
         <div
           aria-hidden="true"

@@ -5,4 +5,5 @@ export const site = {
   email: "zoendaba2007@gmail.com",
   github: "https://github.com/zoendaba2007-cmd",
   githubLabel: "github.com/zoendaba2007-cmd",
+  cvPath: "/cv/zoe-ndaba-cv.pdf",
 };

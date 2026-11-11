@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { site } from "@/lib/site";
 import Container from "./Container";
+import CvLink from "./CvLink";
 
 const links = [
   { href: "/", label: "Home" },
@@ -52,6 +53,7 @@ export default function Footer() {
                 {site.githubLabel}
               </a>
             </li>
+            <li><CvLink variant="text" /></li>
           </ul>
         </div>
         <p className="mt-8 border-t border-line pt-6 font-mono text-xs text-muted">
