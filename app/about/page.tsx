@@ -39,11 +39,6 @@ export default function About() {
             <li key={item}>{item}</li>
           ))}
         </ul>
-        <p className="mt-3 text-muted">I have been part of 2 group projects:</p>
-        <ul className="mt-2 list-disc space-y-1 pl-6 text-muted">
-          <li>A weather app</li>
-          <li>A canteen website</li>
-        </ul>
       </section>
       <section className="mt-10">
         <h2 className="font-display text-2xl font-semibold text-ink">Right now</h2>
