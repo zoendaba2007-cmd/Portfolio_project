@@ -1,0 +1,63 @@
+%PDF-1.4
+%‚„œ”
+1 0 obj
+<< /Type /Catalog /Pages 2 0 R >>
+endobj
+2 0 obj
+<< /Type /Pages /Kids [3 0 R] /Count 1 >>
+endobj
+3 0 obj
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 595 842] /Resources << /Font << /F1 5 0 R /F2 6 0 R >> >> /Contents 4 0 R >>
+endobj
+4 0 obj
+<< /Length 2340 >>
+stream
+0.12 0.22 0.32 rg 0 702 595 140 re f
+0.36 0.55 0.69 rg 44 702 4 140 re f
+1 1 1 rg /F2 27 Tf 1 0 0 1 57 796 Tm (ZoÎ Ndaba) Tj
+0.88 0.93 0.97 rg /F2 11 Tf 1 0 0 1 57 773 Tm (JUNIOR DEVELOPER) Tj
+1 1 1 rg /F1 9.2 Tf 1 0 0 1 57 749 Tm (Email: zoendaba2007@gmail.com) Tj
+1 1 1 rg /F1 9.2 Tf 1 0 0 1 57 733 Tm (GitHub: github.com/zoendaba2007-cmd) Tj
+1 1 1 rg /F1 9.2 Tf 1 0 0 1 57 717 Tm (Portfolio: portfolio-project-self-eight.vercel.app) Tj
+0.20 0.39 0.55 rg /F2 11 Tf 1 0 0 1 44 677 Tm (PROFILE) Tj
+0.78 0.84 0.89 RG 0.7 w 44 670 m 551 670 l S
+0.14 0.19 0.25 rg /F1 9.3 Tf 1 0 0 1 44 657 Tm (Aspiring junior developer and critical thinker who enjoys researching problems, learning new) Tj
+0.14 0.19 0.25 rg /F1 9.3 Tf 1 0 0 1 44 643 Tm (technologies, and building useful software. Interested in user-focused projects with a positive impact) Tj
+0.14 0.19 0.25 rg /F1 9.3 Tf 1 0 0 1 44 629 Tm (on society and collaborative teams.) Tj
+0.20 0.39 0.55 rg /F2 11 Tf 1 0 0 1 44 608 Tm (TECHNICAL SKILLS) Tj
+0.78 0.84 0.89 RG 0.7 w 44 601 m 551 601 l S
+0.14 0.19 0.25 rg /F1 9.3 Tf 1 0 0 1 44 588 Tm (Frontend: HTML, CSS, JavaScript, React, Next.js \(App Router\), TypeScript, Tailwind CSS) Tj
+0.14 0.19 0.25 rg /F1 9.3 Tf 1 0 0 1 44 573 Tm (Backend and data: Python, databases, Supabase Auth, Supabase Row Level Security) Tj
+0.14 0.19 0.25 rg /F1 9.3 Tf 1 0 0 1 44 558 Tm (Tools and deployment: Vercel) Tj
+0.20 0.39 0.55 rg /F2 11 Tf 1 0 0 1 44 530 Tm (PROJECTS) Tj
+0.78 0.84 0.89 RG 0.7 w 44 523 m 551 523 l S
+0.14 0.19 0.25 rg /F2 10 Tf 1 0 0 1 44 510 Tm (Portfolio website) Tj
+0.14 0.19 0.25 rg /F1 8.8 Tf 1 0 0 1 44 496 Tm (Next.js, TypeScript, Tailwind CSS, Supabase) Tj
+0.14 0.19 0.25 rg /F1 9.1 Tf 1 0 0 1 44 481 Tm (Built a responsive portfolio with Supabase-powered project listings and case studies, protected admin) Tj
+0.14 0.19 0.25 rg /F1 9.1 Tf 1 0 0 1 44 468 Tm (project management, and a contact form with an admin message inbox and spam controls.) Tj
+0.14 0.19 0.25 rg /F2 10 Tf 1 0 0 1 44 437 Tm (Canteen website \(group project\)) Tj
+0.14 0.19 0.25 rg /F1 9.1 Tf 1 0 0 1 44 422 Tm (Collaborated with a team on a website for a canteen as part of a group project.) Tj
+0.78 0.84 0.89 RG 0.7 w 44 54 m 551 54 l S
+0.34 0.41 0.47 rg /F1 8 Tf 1 0 0 1 44 37 Tm (Portfolio and project details: portfolio-project-self-eight.vercel.app) Tj
+endstream
+endobj
+5 0 obj
+<< /Type /Font /Subtype /Type1 /BaseFont /Helvetica /Encoding /WinAnsiEncoding >>
+endobj
+6 0 obj
+<< /Type /Font /Subtype /Type1 /BaseFont /Helvetica-Bold /Encoding /WinAnsiEncoding >>
+endobj
+xref
+0 7
+0000000000 65535 f 
+0000000015 00000 n 
+0000000064 00000 n 
+0000000121 00000 n 
+0000000257 00000 n 
+0000002648 00000 n 
+0000002745 00000 n 
+trailer
+<< /Size 7 /Root 1 0 R >>
+startxref
+2847
+%%EOF

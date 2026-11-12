@@ -29,6 +29,7 @@ Junior developer / front-end developer, ideally at a product team or agency wher
 
 - **Look and feel:** bright, clean and modern, with generous whitespace, rounded cards and responsive typography. Page headings scale from `text-4xl` on narrow screens to `text-5xl` at the `sm` breakpoint.
 - **Colour palette:** amethyst as the main brand colour, with a lavender tint, teal and amber as complements.
+- **CV:** the downloadable one-page PDF uses a calm blue theme.
 - **Accessibility:** includes a keyboard-accessible skip link, responsive navigation and high-contrast amethyst for text, buttons and links.
 - **Wireframes:** see the [`docs/`](./docs) folder for Home, Projects and Contact.
 
@@ -83,11 +84,11 @@ The contact form includes a hidden honeypot field; submissions that fill it are 
 
 ## AI disclosure
 
-AI assistance was used to update responsive heading styles and the skip-to-main-content link, and to document the existing Supabase setup and spam protections. No SQL changes were made as part of these updates.
+AI assistance was used to update responsive heading styles and the skip-to-main-content link, create and revise the downloadable CV PDF, and document the existing Supabase setup and spam protections. No SQL changes were made as part of these updates.
 
 ## Status
 
-The site includes the Home, About, Projects, Skills and Contact pages, plus dynamic project case studies and a protected admin area. Project data and contact messages are stored in Supabase; the admin can manage projects and review the message inbox. The CV is available as a PDF from the site. The homepage image and achievement cards, and the introductory copy on the Contact page, still contain placeholders that should be replaced with final content.
+The site includes the Home, About, Projects, Skills and Contact pages, plus dynamic project case studies and a protected admin area. Project data and contact messages are stored in Supabase; the admin can manage projects and review the message inbox. The downloadable CV includes contact details, a profile, technical skills, and the portfolio and canteen group projects. It uses a calm blue design and does not include the weather app or an education and training section. The homepage image and achievement cards, and the introductory copy on the Contact page, still contain placeholders that should be replaced with final content.
 
 ## Reflection
 
