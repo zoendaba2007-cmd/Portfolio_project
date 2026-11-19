@@ -16,14 +16,15 @@ Junior developer / front-end developer, ideally at a product team or agency wher
 
 | Page | Route | Purpose |
 |---|---|---|
-| **Home** | `/` | Introduction, featured projects, achievement placeholders and contact links |
+| **Home** | `/` | Introduction, featured projects, achievement placeholders, CV link and contact links |
 | **About** | `/about` | Background, learning history and current studies |
 | **Projects** | `/projects` | Project cards loaded from Supabase |
 | **Project case study** | `/projects/[slug]` | A project's summary, role, stack, screenshots and links |
 | **Skills** | `/skills` | Skills grouped by area, with links to supporting evidence |
-| **Contact** | `/contact` | Email and GitHub links, CV download and a form that saves messages |
+| **Contact** | `/contact` | Email, GitHub and LinkedIn links, plus a form that saves messages |
 | **Sign in** | `/login` | Admin sign-in through Supabase Auth; there is no public sign-up page |
-| **Admin** | `/admin` | Add, edit and delete projects, and review contact messages; restricted to the site admin |
+| **Admin** | `/admin` | Add and delete projects, and review contact messages; restricted to the site admin |
+| **Edit project** | `/admin/[id]` | Edit an existing project; restricted to the site admin |
 
 ## Design
 
@@ -32,6 +33,26 @@ Junior developer / front-end developer, ideally at a product team or agency wher
 - **CV:** the downloadable one-page PDF uses a calm blue theme.
 - **Accessibility:** includes a keyboard-accessible skip link, responsive navigation and high-contrast amethyst for text, buttons and links.
 - **Wireframes:** see the [`docs/`](./docs) folder for Home, Projects and Contact.
+
+## SEO and accessibility
+
+- Every page has a page-specific title and meta description using the Next.js Metadata API and the shared `lib/seo.ts` helper.
+- Open Graph metadata includes the generated share image at `/og`; the site layout also sets a large-image Twitter card.
+- `/sitemap.xml` lists the static public pages and project case studies loaded from Supabase. `/robots.txt` links to the sitemap and disallows `/admin` and `/login`.
+- GitHub and LinkedIn are linked from the footer and Contact page.
+- Keyboard users can skip directly to the main content using the link at the top of each page.
+
+### Lighthouse (mobile, live site; not yet measured)
+
+No verified Lighthouse report or scores are available yet. Add scores and the audit date after running Lighthouse against the deployed site; do not treat unmeasured scores as 100.
+
+| Page | Accessibility | SEO |
+|---|---:|---:|
+| Home | Not measured | Not measured |
+| Projects | Not measured | Not measured |
+| About | Not measured | Not measured |
+| Skills | Not measured | Not measured |
+| Contact | Not measured | Not measured |
 
 ## Tech stack
 
@@ -84,12 +105,14 @@ The contact form includes a hidden honeypot field; submissions that fill it are 
 
 ## AI disclosure
 
-AI assistance was used to update responsive heading styles and the skip-to-main-content link, create and revise the downloadable CV PDF, and document the existing Supabase setup and spam protections. No SQL changes were made as part of these updates.
+AI assistance was used to update responsive heading styles and the skip-to-main-content link, create and revise the downloadable CV PDF, document the Supabase setup and spam protections, and implement the page-specific SEO metadata and descriptions described above. No SQL changes were made as part of these updates.
 
 ## Status
 
-The site includes the Home, About, Projects, Skills and Contact pages, plus dynamic project case studies and a protected admin area. Project data and contact messages are stored in Supabase; the admin can manage projects and review the message inbox. The downloadable CV includes contact details, a profile, technical skills, and the portfolio and canteen group projects. It uses a calm blue design and does not include the weather app or an education and training section. The homepage image and achievement cards, and the introductory copy on the Contact page, still contain placeholders that should be replaced with final content.
+The public portfolio, project case studies, skills evidence, contact form, and protected Supabase-backed admin tools are in place. The CV is available from the footer and homepage. The homepage image and achievement cards, and the introductory copy on the Contact page, still contain placeholders that should be replaced with final content. Lighthouse scores have not yet been recorded.
 
 ## Reflection
 
-The project now supports Supabase-backed project management, case-study pages and a contact-message inbox, with admin access restricted to the configured site email. Project listings use Suspense while request-time data loads. Responsive heading sizes and a keyboard-accessible skip link support usability on smaller screens and with a keyboard. Remaining content work includes replacing the homepage image and achievement placeholders and finalizing the Contact page introduction.
+The project supports Supabase-backed project management, case-study pages and a contact-message inbox, with admin access restricted to the configured site email. Project listings use Suspense while request-time data loads. Page-specific metadata, canonical URLs, social-sharing metadata, a generated share image, sitemap and robots rules support discovery and sharing. 
+
+Remaining content work includes replacing the homepage image and achievement placeholders, finalizing the Contact page introduction, and recording real mobile Lighthouse scores for the live site.
