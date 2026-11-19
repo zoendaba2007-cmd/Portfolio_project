@@ -1,9 +1,14 @@
-import type { Metadata } from "next";
 import Container from "@/components/Container";
+import { pageMeta } from "@/lib/seo";
 import { login } from "./actions";
 
-export const metadata: Metadata = {
-  title: "Sign in",
+export const metadata = {
+  ...pageMeta({
+    title: "Sign in",
+    description:
+      "Sign in to gain access to the private admin dashboard to manage projects and review messages sent through the contact form. Only the admin user can sign in.",
+    path: "/login",
+  }),
   robots: { index: false },
 };
 

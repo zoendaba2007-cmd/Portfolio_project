@@ -1,13 +1,15 @@
-import type { Metadata } from "next";
 import Link from "next/link";
 import Container from "@/components/Container";
 import Eyebrow from "@/components/Eyebrow";
+import { pageMeta } from "@/lib/seo";
 import { skillGroups } from "@/lib/skills";
 
-export const metadata: Metadata = {
+export const metadata = pageMeta({
   title: "Skills",
-  description: "Skills I can back with a project, a commit or a deployed page.",
-};
+  description:
+    "You can explore the web development skills in areas such as frontend, programming, and databases, with links to projects and other evidence.",
+  path: "/skills",
+});
 
 export default function Skills() {
   const link =

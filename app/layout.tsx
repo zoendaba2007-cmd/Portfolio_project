@@ -17,8 +17,19 @@ const plexMono = IBM_Plex_Mono({
 });
 
 export const metadata: Metadata = {
-  title: `${site.name} | ${site.role}`,
-  description: `Portfolio of ${site.name}, a ${site.role.toLowerCase()}. Projects, achievements and contact details.`,
+  metadataBase: new URL(site.url),
+  title: {
+    default: `${site.name} | ${site.role}`,
+    template: `%s | ${site.name}`,
+  },
+  description: `Portfolio and CV of ${site.name}, a ${site.role.toLowerCase()}. Projects, skills with evidence and contact details.`,
+  openGraph: {
+    type: "website",
+    siteName: `${site.name} | Portfolio`,
+    locale: "en_ZA",
+    images: [{ url: "/og", width: 1200, height: 630, alt: `${site.name}, ${site.role}` }],
+  },
+  twitter: { card: "summary_large_image" },
 };
 
 export default function RootLayout({

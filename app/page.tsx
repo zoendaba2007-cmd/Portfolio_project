@@ -6,8 +6,16 @@ import Eyebrow from "@/components/Eyebrow";
 import ProjectCard from "@/components/ProjectCard";
 import Link from "next/link";
 import { getProjects } from "@/lib/projects";
+import { pageMeta } from "@/lib/seo";
 import { site } from "@/lib/site";
 import CvLink from "@/components/CvLink";
+
+export const metadata = pageMeta({
+  title: "Home",
+  description:
+    "Explore the portfolio of a software developer in training, featuring selected projects, practical skills, and ways to get in touch.",
+  path: "/",
+});
 
 async function FeaturedProjects() {
   const projects = await getProjects();

@@ -4,6 +4,14 @@ import CTABand from "@/components/CTABand";
 import Eyebrow from "@/components/Eyebrow";
 import ProjectCard from "@/components/ProjectCard";
 import { getProjects } from "@/lib/projects";
+import { pageMeta } from "@/lib/seo";
+
+export const metadata = pageMeta({
+  title: "Projects",
+  description:
+    "Explore any of the projescts I have worked on, see what catches your eye, and click through to read the case study for each project to learn more about the work.",
+  path: "/projects",
+});
 
 async function ProjectIndex() {
   const projects = await getProjects();

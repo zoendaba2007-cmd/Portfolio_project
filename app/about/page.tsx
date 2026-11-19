@@ -1,14 +1,15 @@
-import type { Metadata } from "next";
 import Container from "@/components/Container";
 import ButtonLink from "@/components/ButtonLink";
 import Eyebrow from "@/components/Eyebrow";
-import { site } from "@/lib/site";
+import { pageMeta } from "@/lib/seo";
 import CvLink from "@/components/CvLink";
 
-export const metadata: Metadata = {
+export const metadata = pageMeta({
   title: "About",
-  description: `About ${site.name}: who I am and the role I'm looking for.`,
-};
+  description:
+    "I am on my path into software development, gaining new experience and skills, and aim to become a junior developer.",
+  path: "/about",
+});
 
 const about = {
   intro: "I am a crictical thinker and problem solver, who loves to research and learn about globel issues. ",

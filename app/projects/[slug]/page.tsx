@@ -3,6 +3,7 @@ import Link from "next/link";
 import { notFound } from "next/navigation";
 import Container from "@/components/Container";
 import Eyebrow from "@/components/Eyebrow";
+import { pageMeta } from "@/lib/seo";
 import { getProjectBySlug, parseScreenshot } from "@/lib/projects";
 
 type Props = { params: Promise<{ slug: string }> };
@@ -10,8 +11,19 @@ type Props = { params: Promise<{ slug: string }> };
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { slug } = await params;
   const project = await getProjectBySlug(slug);
-  if (!project) return { title: "Project not found" };
-  return { title: project.title, description: project.summary };
+  if (!project) {
+    return pageMeta({
+      title: "Project not found",
+      description:
+        "This project is currently unavailable. There may be a temporary issue or the project may have been removed. Please check back later or explore other projects in the portfolio.",
+      path: `/projects/${slug}`,
+    });
+  }
+  return pageMeta({
+    title: project.title,
+    description: `Explore the ${project.title} case study, including its purpose, development approach, technologies used, and key takeaways from the work.`,
+    path: `/projects/${slug}`,
+  });
 }
 
 function Section({

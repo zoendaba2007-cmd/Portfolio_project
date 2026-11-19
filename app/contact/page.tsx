@@ -1,7 +1,15 @@
 import Container from "@/components/Container";
 import ContactForm from "@/components/ContactForm";
 import Eyebrow from "@/components/Eyebrow";
+import { pageMeta } from "@/lib/seo";
 import { site } from "@/lib/site";
+
+export const metadata = pageMeta({
+  title: "Contact",
+  description:
+    "If you're interested in collaborating or have project ideas, feel free to reach out. You can send a message through the form or connect by email and GitHub.",
+  path: "/contact",
+});
 
 export default function Contact() {
   return (

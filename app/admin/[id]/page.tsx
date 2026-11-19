@@ -3,20 +3,27 @@ import { notFound, redirect } from "next/navigation";
 import Container from "@/components/Container";
 import ProjectForm from "@/components/ProjectForm";
 import { isAdminEmail } from "@/lib/admin";
+import { pageMeta } from "@/lib/seo";
 import { PROJECT_COLUMNS, type Project } from "@/lib/projects";
 import { createClient } from "@/lib/supabase/server";
 import { updateProject } from "../actions";
 
-export const metadata: Metadata = {
-  title: "Edit project",
-  robots: { index: false },
-};
+type Props = { params: Promise<{ id: string }> };
 
-export default async function EditProject({
-  params,
-}: {
-  params: Promise<{ id: string }>;
-}) {
+export async function generateMetadata({ params }: Props): Promise<Metadata> {
+  const { id } = await params;
+  return {
+    ...pageMeta({
+      title: "Edit project",
+      description:
+        "Only the admin user can gain access to the project editing interface.",
+      path: `/admin/${id}`,
+    }),
+    robots: { index: false },
+  };
+}
+
+export default async function EditProject({ params }: Props) {
   const { id } = await params;
   const supabase = await createClient();
   const {

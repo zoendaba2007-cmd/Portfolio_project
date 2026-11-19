@@ -1,9 +1,9 @@
-import type { Metadata } from "next";
 import Link from "next/link";
 import { redirect } from "next/navigation";
 import Container from "@/components/Container";
 import Eyebrow from "@/components/Eyebrow";
 import ProjectForm from "@/components/ProjectForm";
+import { pageMeta } from "@/lib/seo";
 import { getProjects } from "@/lib/projects";
 import { isAdminEmail } from "@/lib/admin";
 import { createClient } from "@/lib/supabase/server";
@@ -11,8 +11,13 @@ import { logout } from "../login/actions";
 import { createProject, deleteProject } from "./actions";
 import MessageList from "@/components/MessageList";
 
-export const metadata: Metadata = {
-  title: "Admin",
+export const metadata = {
+  ...pageMeta({
+    title: "Admin",
+    description:
+      "Manages the portfolio projects and reviews messages submitted through the contact form from the private admin dashboard. Administrator sign-in is required.",
+    path: "/admin",
+  }),
   robots: { index: false },
 };
 
@@ -95,4 +100,3 @@ export default async function Admin() {
     </Container>
   );
 }
-
