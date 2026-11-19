@@ -54,6 +54,21 @@ export default function Contact() {
                 </a>
               </dd>
             </div>
+            <div>
+              <dt className="font-mono text-xs uppercase tracking-widest text-muted">
+                LinkedIn
+              </dt>
+              <dd>
+                <a
+                  href={site.linkedin}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex min-h-11 items-center text-lg font-semibold text-primary underline"
+                >
+                  {site.linkedinLabel} <span aria-hidden="true">↗</span>
+                </a>
+              </dd>
+            </div>
           </dl>
           <div className="mt-8 rounded-lg border border-line bg-tint p-5">
             <h2 className="font-display text-lg font-semibold text-ink">

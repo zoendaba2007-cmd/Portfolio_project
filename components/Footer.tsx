@@ -53,6 +53,16 @@ export default function Footer() {
                 {site.githubLabel}
               </a>
             </li>
+            <li>
+              <a
+                href={site.linkedin}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex min-h-11 items-center text-sm font-semibold text-primary underline"
+              >
+                {site.linkedinLabel}
+              </a>
+            </li>
             <li><CvLink variant="text" /></li>
           </ul>
         </div>
